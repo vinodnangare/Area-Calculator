@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Of Circle Calculator</title>
+    <script>
+        function area(){
+        var rad= parseFloat(document.getElementById("radius").value);
+        var area=rad*rad*3.14;
+        var place=document.getElementById("space");
+        place.innerHTML=(`<b />Area Of Circle is:<b /> ${area.toFixed(2)} cm.sq`);
+        }
+    </script>
+    <style>
+        body{
+         background-color: rgb(255, 171, 223);
+        }
+      .container{
+        display: block;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid black;
+        height: 450px;
+        width: 350px;
+        margin: 0 auto;
+        border-radius: 10px;
+        background-color: aliceblue;
+
+        }
+        .input-box{
+            display: block;
+            justify-content: center;
+            align-items: center;
+            margin: 80px auto;
+            border-radius: 10px;
+            outline:none;
+            height: 40px;
+            width: 220px;
+        }
+        .para{
+            margin-left: 20px;
+            font-size: larger;
+        }
+        .btn{
+            display: block;
+            justify-content: center;
+            align-items: center;
+            margin: 45px auto;
+            height: 40px;
+            background-color: black;
+            color: aliceblue;
+            border-radius: 10px;
+        }
+        .para2{
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <center><h2>Area Of Circle Calculator</h2></center>
+    <input type="text" id="radius" class="input-box" placeholder="Enter radius of Circle">
+    <p id="space" class="para">Area Of Circle is:</p>
+    <p class="para2"><b>Formula Used:</b><br />Area=πr2<br />π=3.14</p>
+    <button type="button" onclick="area()" class="btn">Calculate</button>
+</div>
+    
+</body>
+</html>
