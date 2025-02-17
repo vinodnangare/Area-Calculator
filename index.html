@@ -3,68 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Area Of Circle Calculator</title>
+    <title>Area Calculator</title>
     <script>
-        function area(){
-        var rad= parseFloat(document.getElementById("radius").value);
-        var area=rad*rad*3.14;
-        var place=document.getElementById("space");
-        place.innerHTML=(`<b />Area Of Circle is:<b /> ${area.toFixed(2)} cm.sq`);
+        function areaCircle() {
+            var rad = parseFloat(document.getElementById("radius").value);
+            var area = rad * rad * 3.14;
+            var place = document.getElementById("spaceCircle");
+            place.innerHTML = `<b>Area Of Circle is:</b> ${area.toFixed(2)} cm.sq`;
+        }
+
+        function areaRectangle() {
+            var length = parseFloat(document.getElementById("length").value);
+            var width = parseFloat(document.getElementById("width").value);
+            var area = length * width;
+            var place = document.getElementById("spaceRectangle");
+            place.innerHTML = `<b>Area Of Rectangle is:</b> ${area.toFixed(2)} cm.sq`;
         }
     </script>
     <style>
-        body{
-         background-color: rgb(255, 171, 223);
+        body {
+            background-color: rgb(255, 171, 223);
         }
-      .container{
-        display: block;
-        justify-content: center;
-        align-items: center;
-        border: 2px solid black;
-        height: 450px;
-        width: 350px;
-        margin: 0 auto;
-        border-radius: 10px;
-        background-color: aliceblue;
-
-        }
-        .input-box{
+        .container {
             display: block;
             justify-content: center;
             align-items: center;
-            margin: 80px auto;
+            border: 2px solid black;
+            height: 700px;
+            width: 450px;
+            margin: 0 auto;
             border-radius: 10px;
-            outline:none;
+            background-color: aliceblue;
+            padding: 20px;
+        }
+        .input-box {
+            display: block;
+            margin: 20px auto;
+            border-radius: 10px;
+            outline: none;
             height: 40px;
             width: 220px;
         }
-        .para{
-            margin-left: 20px;
-            font-size: larger;
-        }
-        .btn{
+        .btn {
             display: block;
-            justify-content: center;
-            align-items: center;
-            margin: 45px auto;
+            margin: 20px auto;
             height: 40px;
             background-color: black;
             color: aliceblue;
             border-radius: 10px;
         }
-        .para2{
-            margin-left: 20px;
+        .para {
+            text-align: center;
+            font-size: larger;
         }
     </style>
 </head>
 <body>
-<div class="container">
-    <center><h2>Area Of Circle Calculator</h2></center>
-    <input type="text" id="radius" class="input-box" placeholder="Enter radius of Circle">
-    <p id="space" class="para">Area Of Circle is:</p>
-    <p class="para2"><b>Formula Used:</b><br />Area=πr2<br />π=3.14</p>
-    <button type="button" onclick="area()" class="btn">Calculate</button>
-</div>
-    
+    <div class="container">
+        <center><h2>Area Calculator</h2></center>
+        
+        <h3>Circle</h3>
+        <input type="text" id="radius" class="input-box" placeholder="Enter radius of Circle">
+        <p id="spaceCircle" class="para">Area Of Circle is:</p>
+        <p class="para"><b>Formula Used:</b><br>Area = πr²<br>π = 3.14</p>
+        <button type="button" onclick="areaCircle()" class="btn">Calculate Circle Area</button>
+        
+        <h3>Rectangle</h3>
+        <input type="text" id="length" class="input-box" placeholder="Enter length of Rectangle">
+        <input type="text" id="width" class="input-box" placeholder="Enter width of Rectangle">
+        <p id="spaceRectangle" class="para">Area Of Rectangle is:</p>
+        <p class="para"><b>Formula Used:</b><br>Area = Length × Width</p>
+        <button type="button" onclick="areaRectangle()" class="btn">Calculate Rectangle Area</button>
+    </div>
 </body>
 </html>
